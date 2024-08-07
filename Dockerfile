@@ -7,6 +7,10 @@ ARG PATH="/root/miniconda3/bin:${PATH}"
 
 RUN  apt-get -y update
 
+# Install make and gcc
+RUN apt-get install -y make
+RUN apt-get install -y build-essential
+
 # Install wget to fetch Miniconda
 RUN apt-get install -y wget && \
     apt-get clean && \
